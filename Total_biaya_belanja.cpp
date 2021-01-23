@@ -18,8 +18,9 @@ int main()
     int jum_barang;
     int harga;
     int total_harga;
-    int sub_total;
+    int sub_total = 0;
     int barang;
+    int p;
     char yt;
 
     awal:
@@ -46,14 +47,16 @@ int main()
 
     cout << "\n";
 
-    if( yt=='Y' || yt == 'y' )
-    {
-        goto selesai;
-    }
+    sub_total += total_harga;
 
-    else if( yt == 'T' || yt == 't' )
+    if( yt=='T' || yt == 't' )
     {
         goto awal;
+    }
+
+    else if( yt == 'Y' || yt == 'y' )
+    {
+        goto selesai;
     }
 
     else
@@ -62,9 +65,7 @@ int main()
     }
 
     selesai:
-    sub_total += total_harga;
-    p = sub_total;
-    cout << "Total belanja yang harus dibayar Rp. " << p << endl;
+    cout << "Total belanja yang harus dibayar Rp. " << sub_total << endl;
 
     getch();
     return 0;
