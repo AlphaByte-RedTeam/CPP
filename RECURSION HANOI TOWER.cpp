@@ -4,23 +4,23 @@
 #include <iostream>
 using namespace std;
 
-void menara (int , char , char , char ); //function prototyping
+void tower (int , char , char , char );
 
 int main (){
     
     int n;
-    cout << "Masukkan banyaknya Disk : ";
+    cout << "Input disk : ";
     cin >> n;
-    menara (n, 'A', 'C', 'B'); //calling function
+    tower (n, 'A', 'C', 'B');
 
     return 0;
 }
 
-void menara (int x, char a, char c, char b){
+void tower (int x, char a, char c, char b){
     if (x > 0){
-        menara (x-1, a, b, c);
-        cout << "Pindahkan disk " << x << " dari " << a << " ke " << c << endl;
-        menara (x-1, b, c, a);
+        tower (x-1, a, b, c);
+        cout << "Move disk " << x << " from " << a << " to " << c << endl;
+        tower (x-1, b, c, a);
     }
 }
 
